@@ -20,7 +20,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
-//import androidx.paging.compose.items
 import com.programmer270487.dansandroid.domain.Position
 import com.programmer270487.dansandroid.util.ErrorMessage
 

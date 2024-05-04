@@ -16,7 +16,6 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-//import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
@@ -27,11 +26,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBeerDatabase(@ApplicationContext context: Context): PositionDb {
+    fun providePositionDatabase(@ApplicationContext context: Context): PositionDb {
         return Room.databaseBuilder(
             context,
             PositionDb::class.java,
-            "beers.db"
+            "positions.db"
         )
             .fallbackToDestructiveMigration()
             .build()
@@ -39,9 +38,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBeerApi(): PositionApi {
+    fun providePositionApi(): PositionApi {
         return Retrofit.Builder()
-            .baseUrl(PositionApi.BASE_URL) // baseUrl must end in /
+            .baseUrl(PositionApi.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create()
@@ -49,15 +48,15 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBeerPager(beerDb: PositionDb, beerApi: PositionApi): Pager<Int, PositionEntity> {
+    fun providePositionPager(db: PositionDb, api: PositionApi): Pager<Int, PositionEntity> {
         return Pager(
-            config = PagingConfig(pageSize = 20),
+            config = PagingConfig(pageSize = 10), // 20
             remoteMediator = PositionRemoteMediator(
-                db = beerDb,
-                api = beerApi
+                db = db,
+                api = api
             ),
             pagingSourceFactory = {
-                beerDb.dao.pagingSource()
+                db.dao.pagingSource()
             }
         )
     }

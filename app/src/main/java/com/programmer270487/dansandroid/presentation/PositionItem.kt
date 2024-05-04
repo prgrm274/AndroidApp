@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.programmer270487.dansandroid.domain.Position
-import com.kumpulanbaru.retrofits.paging3_dans_stevdza.ui.theme.AplikasiTheme
+import com.programmer270487.dansandroid.ui.theme.DansAndroidTheme
 
 @Composable
 fun PositionItem(
