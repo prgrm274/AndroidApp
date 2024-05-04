@@ -1,4 +1,4 @@
-package com.programmer270487.dansandroid.presentation
+package com.programmer270487.dansandroid.presentation.positions
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

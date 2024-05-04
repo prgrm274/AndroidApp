@@ -9,7 +9,7 @@ import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.kumpulanbaru.R
+import com.programmer270487.dansandroid.BuildConfig
 import com.programmer270487.dansandroid.presentation.googlesignin.data.SignInResult
 import com.programmer270487.dansandroid.presentation.googlesignin.data.UserData
 import kotlinx.coroutines.CancellationException
@@ -77,7 +77,8 @@ class GoogleAuthUiClient(
                 GoogleIdTokenRequestOptions.builder()
                     .setSupported(true)
                     .setFilterByAuthorizedAccounts(false)
-                    .setServerClientId(context.getString(R.string.default_web_client_id))
+//                    .setServerClientId(context.getString(R.string.default_web_client_id))
+                    .setServerClientId(BuildConfig.web_client_id)
                     .build()
             )
             .setAutoSelectEnabled(true)

@@ -1,4 +1,4 @@
-package com.programmer270487.dansandroid.presentation
+package com.programmer270487.dansandroid.presentation.positions
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.programmer270487.dansandroid.domain.Position
-import com.programmer270487.dansandroid.ui.theme.DansAndroidTheme
 
 @Composable
 fun PositionItem(

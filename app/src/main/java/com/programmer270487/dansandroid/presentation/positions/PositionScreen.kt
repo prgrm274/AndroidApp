@@ -1,4 +1,4 @@
-package com.programmer270487.dansandroid.presentation
+package com.programmer270487.dansandroid.presentation.positions
 
 import android.util.Log
 import android.widget.Toast
